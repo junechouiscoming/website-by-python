@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 我的网站
     'my_sites',
     'users',
+
 ]
 
 MIDDLEWARE = [

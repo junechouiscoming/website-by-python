@@ -2,7 +2,7 @@
 
 {% block content %}
 
-  <p>Topics</p>
+  <p>主题</p>
 
   <ul>
       {% for topic in topics %}
@@ -15,5 +15,6 @@
   </ul>
 
   <a href="{% url 'my_sites:new_topic' %}">添加新主题:</a>
+
 
 {% endblock content %}

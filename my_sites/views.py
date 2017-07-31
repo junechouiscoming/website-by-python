@@ -55,6 +55,7 @@ def new_entry(request, topic_id):
             return HttpResponseRedirect(reverse('my_sites:topic', args=[topic_id]))
 
     context = {'topic': topic, 'form': form}
+
     return render(request, 'my_sites/new_entry.html', context)
 
 
