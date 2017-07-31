@@ -1,0 +1,11 @@
+{% extends 'my_sites/base.html' %}
+
+{% block content %}
+    <p>Add a new topic:</p>
+
+    <form action="{% url 'my_sites:new_topic' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Confirm</button>
+    </form>
+{% endblock content %}

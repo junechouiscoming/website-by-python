@@ -1,0 +1,15 @@
+{% extends 'my_sites/base.html' %}
+
+{% block content %}
+
+  <p><a href="{% url 'my_sites:topic' topic.id %}">{{ topic }}</a></p>
+
+  <p>编辑内容:</p>
+
+  <form action="{% url 'my_sites:edit_entry' entry.id %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button name="submit">保存修改</button>
+  </form>
+
+{% endblock content %}
