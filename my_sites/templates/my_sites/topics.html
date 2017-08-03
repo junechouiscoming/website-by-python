@@ -1,20 +1,24 @@
 {% extends 'my_sites/base.html' %}
 
-{% block content %}
+{% block header %}
+    <h2>主题</h2>
+{% endblock header %}
 
-  <p>主题</p>
+{% block content %}
 
   <ul>
       {% for topic in topics %}
           <li>
-            <a href="{% url 'my_sites:topic' topic.id %}">{{ topic }}</a>
+            <h4>
+                <a href="{% url 'my_sites:topic' topic.id %}">{{ topic }}</a>
+            </h4>
           </li>
       {% empty %}
-          <li>No topics have been added yet.</li>
+          <li>暂时没有新主题。</li>
       {% endfor %}
   </ul>
 
-  <a href="{% url 'my_sites:new_topic' %}">添加新主题:</a>
+    <h3><a href="{% url 'my_sites:new_topic' %}">添加新主题:</a></h3>
 
 
 {% endblock content %}

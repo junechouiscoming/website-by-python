@@ -1,16 +1,21 @@
 {% extends 'my_sites/base.html' %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h2>登录</h2>
+{% endblock header %}
 
 {% block content %}
 
-    {% if form.errors %}
-    <p>用户名或密码错误，请重试</p>
-    {% endif %}
-
     <form action="{% url 'users:login' %}" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit">登录</button>
-        <input type="hidden" name="text" value="{% url 'my_sites:index' %}" />
+        {% bootstrap_form form %}
+
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">登录</button>
+        {% endbuttons %}
+
+        <input type="hidden" name="next" value="{% url 'my_sites:index' %}" />
     </form>
 
 {% endblock content %}

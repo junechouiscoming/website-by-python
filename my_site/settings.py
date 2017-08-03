@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 我的网站
     'my_sites',
     'users',
+    'bootstrap3',
 
 ]
 
@@ -123,3 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+# 我的设置
+LOGIN_URL = '/users/login/'
+
+BOOTSTRAP3 = {
+    'include_jquery': True,
+}

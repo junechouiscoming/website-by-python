@@ -1,5 +1,19 @@
 {% extends 'my_sites/base.html' %}
 
+{% block header %}
+    <div class="jumbotron">
+        <h2>Tech by Django,Powered by You.</h2>
+    </div>
+{% endblock header %}
+
 {% block content %}
-    <p>My first Website by Django.</p>
+    <h3>
+        <a href="{% url 'users:register' %}">
+            注册
+        </a>
+        以创建属于您的知识主题。
+    </h3>
+    <h3>
+        当你学到了关于一个主题的新知识，可以在这儿创建你的总结。
+    </h3>
 {% endblock content %}

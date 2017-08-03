@@ -1,11 +1,22 @@
 {% extends 'my_sites/base.html' %}
 
-{% block content %}
-    <p>添加新主题:</p>
+{% load bootstrap3 %}
 
-    <form action="{% url 'my_sites:new_topic' %}" method="POST">
+{% block header %}
+    <h2>添加新主题：</h2>
+{% endblock header %}
+
+{% block content %}
+
+    <form action="{% url 'my_sites:new_topic' %}" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">确认</button>
+        {% bootstrap_form form %}
+
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">确认</button>
+        {% endbuttons %}
+
+    <input type="hidden" name="next" value="{% url 'my_sites:index' %}" />
     </form>
+
 {% endblock content %}
