@@ -1,3 +1,5 @@
 /.idea
 *.pyc
 __pycache__/
+*.sqlite3
+web_env/
